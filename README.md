@@ -3,5 +3,10 @@
     cd src
 	javac io/ascending/training/*.java
 
+##### compile class with package info
+    mkdir target
+	cd src
+	javac -d ../target/ io/ascending/training/*.java
+
 #### Run the main class
-	java -cp . io.ascending.training.Main "hello"
+	java -cp ./target/ io.ascending.training.Main "hello"
