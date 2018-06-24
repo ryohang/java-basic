@@ -2,13 +2,13 @@ package io.ascending.training.domain;
 
 import io.ascending.training.WheelShape;
 
-public class Bike implements Vehicle {
+public class Bike implements Vehicle,Ship {
     private WheelShape wheelShape = WheelShape.ROUND;
-    private Integer wheelNum = 2;
+    protected Integer wheelNum = 2;
 
     @Override
     public void move() {
-        new UnsupportedOperationException("Not Implemented yet!");
+        System.out.print("1 mile per hour");
     }
 
     @Override
@@ -28,5 +28,10 @@ public class Bike implements Vehicle {
 
     public String toString() {
         return "WheelShape: " + getWheelShape() + ", Wheel Number: " + getWheelNum();
+    }
+
+    @Override
+    public void floatRiver() {
+
     }
 }

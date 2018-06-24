@@ -20,6 +20,10 @@ public class Main {
         System.out.print("======== Print Bicycle Info ========= \n");
         System.out.print(by);
         System.out.print("\n");
+        System.out.print("--====== Print Instance Static Variable =======-- \n");
+        System.out.print(by.brand);
+        System.out.print("--====== Print Classic Static Variable =======-- \n");
+        System.out.print(Bicycle.brand);
 
         System.out.print("======== Print Motorcycle Info ========= \n");
         System.out.print(mc);
