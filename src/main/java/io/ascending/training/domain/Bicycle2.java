@@ -4,7 +4,7 @@ public class Bicycle2 extends GiantBicycle{
 
 //    @Override
 //    public void move(){
-//        System.out.print("2 mile per hour");
+//        System.out.print("2 mile per hour\n");
 //    }
 
     public void moveTwice(){
