@@ -29,6 +29,10 @@ public class Main {
         System.out.print(mc);
         System.out.print("\n");
 
+        String str1 = new String("1234");
+        String str2 = new String("1234");
+        if(str1.equals(str2)) System.out.print("string comparsion");
+
 
     }
 }
