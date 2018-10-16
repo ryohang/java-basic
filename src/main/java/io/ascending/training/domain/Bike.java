@@ -34,4 +34,15 @@ public class Bike implements Vehicle,Ship {
     public void floatRiver() {
 
     }
+
+    public static String getWheelShapeStatic(){
+        return "round";
+    }
+
+    public static void main(String[] args){
+        Bike b = new Bike();
+        System.out.println(b.getWheelShape());
+        System.out.println(Bike.getWheelShapeStatic());
+
+    }
 }
