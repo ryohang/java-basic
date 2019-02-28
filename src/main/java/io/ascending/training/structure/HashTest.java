@@ -11,7 +11,7 @@ public class HashTest {
 
         DataKey dk = new DataKey();
         dk.setId(1);
-        dk.setName("Pankaj");
+        dk.setName("Ryo");
         System.out.println(dk.hashCode());
 
         Integer value = hm.get(dk);
@@ -25,7 +25,7 @@ public class HashTest {
 
         DataKey dk = new DataKey();
         dk.setId(1);
-        dk.setName("Pankaj");
+        dk.setName("Ryo");
         System.out.println(dk.hashCode());
 
         hm.put(dk, 10);
