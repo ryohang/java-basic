@@ -1,9 +1,9 @@
-package io.ascending.training.algorithm;
+package io.ascending.training.algorithm.backtrack;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BackTracking {
+public class Dice {
     public static void diceRolls(int dice) {
         List<Integer> chosen = new ArrayList<Integer>();
         diceRolls(dice, chosen);
@@ -27,6 +27,6 @@ public class BackTracking {
     }
 
     public static void main(String[] args){
-        BackTracking.diceRolls(6);
+        Dice.diceRolls(6);
     }
 }
