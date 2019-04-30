@@ -1,6 +1,6 @@
 package io.ascending.training.domain;
 
-public abstract class VehicelAbstract {
+public abstract class VehicleAbstract {
     public abstract void move();
     public void Float(){};
 }
