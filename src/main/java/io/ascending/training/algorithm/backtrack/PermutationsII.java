@@ -1,6 +1,7 @@
 package io.ascending.training.algorithm.backtrack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,13 +25,17 @@ public class PermutationsII {
             res.add(intRes);
             return;
         }
+//        System.out.println("i am point at index :"+index);
         for (int i = index; i < nums.length; i++) {
-            if (nums[i]==nums[index]&&i!=index) {
+            boolean check = requireSwap(nums, index, i);
+            if(!check){
                 continue;
             }
-            nums = swap(nums,index,i);
-            helper(nums, res,i+1);
-            nums = swap(nums,index,i);
+//            if(check) {
+            nums = swap(nums, index, i);
+            helper(nums, res, index + 1);
+            nums = swap(nums, index, i);
+//            }
         }
     }
 
@@ -41,6 +46,7 @@ public class PermutationsII {
         nums[j] = temp;
         return nums;
     }
+
     public List<Integer> fromArray(int[] nums){
         List<Integer> intRes = new ArrayList<>();
         for (int i : nums)
@@ -50,12 +56,21 @@ public class PermutationsII {
         return intRes;
     }
 
+    boolean requireSwap(int[] nums, int start, int curr) {
+        for (int i = start; i < curr; i++) {
+            if (nums[i] == nums[curr]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        int[] nums = {1, 1, 2};
+//        int[] nums = {1, 3, 2};
         PermutationsII solution = new PermutationsII();
-        List<List<Integer>> result = solution.permuteUnique(nums);
-        System.out.println(result);
-        int[] nums2 = {1, 1, 2, 1};
+//        List<List<Integer>> result = solution.permuteUnique(nums);
+//        System.out.println(result);
+        int[] nums2 = {1, 2, 2, 1};
         List<List<Integer>> result2 = solution.permuteUnique(nums2);
         System.out.println(result2);
 
