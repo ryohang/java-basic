@@ -16,7 +16,7 @@ public class LambdaTest {
             return "Good Morning " + str + "!";
         }
     }
-    
+
     public static void main(String[] args){
         MyString classString = new LambdaTest.MyStringImpl();
         System.out.println(classString.myStringFunction("Ryo"));
