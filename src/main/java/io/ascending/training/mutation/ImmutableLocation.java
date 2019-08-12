@@ -15,6 +15,10 @@ public class ImmutableLocation {
         return y;
     }
 
+//    public void setX(int x){
+//        this.x = x;
+//    }
+
     public String toString(){
         return "immutable location @(x:"+x+","+"y:"+y+")";
     }
