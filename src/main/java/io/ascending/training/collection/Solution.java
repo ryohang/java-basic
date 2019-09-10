@@ -47,12 +47,12 @@ public class Solution {
         //sorting employees array using Comparable interface implementation
         Arrays.sort(empArr);
         System.out.println("Default Sorting of Employees list:\n"+Arrays.toString(empArr));
-
-        Arrays.sort(empArr, SalaryComparator);
+//        Comparator<Employee> salaryComparator = (e1, e2)->(int)(e1.getSalary()-e2.getSalary());
+        Arrays.sort(empArr, new SalaryComparator());
         System.out.println("Employees list sorted by Salary:\n"+Arrays.toString(empArr));
 
         //sort employees array using Comparator by Age
-        Arrays.sort(empArr, AgeComparator);
+        Arrays.sort(empArr, (o1, o2)->o1.getAge()-o2.getAge());
         System.out.println("Employees list sorted by Age:\n"+Arrays.toString(empArr));
 
         //sort employees array using Comparator by Name

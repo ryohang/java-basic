@@ -19,6 +19,12 @@ public class FunctionalProgramming {
         System.out.println(
                 numbers.stream().filter(e->e%2==0).mapToInt(e->e*2).sum()
         );
+//        numbers.stream().filter(a->{
+//            if(a%2==0) {
+//                return true;
+//            }
+//            return false;
+//        });
 
         List<Integer> anotherNums = Arrays.asList(1,2,3);
         final int factor = 2;
@@ -27,7 +33,7 @@ public class FunctionalProgramming {
 //        factor[0] = 0;
 //        factor = new int[]{0};
         str.forEach(System.out::println);
-
+//
     }
 
 
