@@ -15,5 +15,6 @@ public class Bicycle2 extends GiantBicycle{
     public static void main(String[] args){
         Bicycle2 bicycle2 = new Bicycle2();
         bicycle2.moveTwice();
+        System.out.println(BikeType.MOTOCYCLE.ordinal());
     }
 }
