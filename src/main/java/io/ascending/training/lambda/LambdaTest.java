@@ -1,7 +1,12 @@
 package io.ascending.training.lambda;
 
+import io.ascending.training.WheelShape;
+import io.ascending.training.domain.Bike;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class LambdaTest {
     interface MyString {
@@ -41,5 +46,25 @@ public class LambdaTest {
             System.out.println(x);
         });
 
+
+        List<Bike> bikes = new ArrayList<>();
+        Bike b1 = new Bike();
+        b1.setWheelShape(WheelShape.SQUARE);
+        Bike b2 = new Bike();
+        b2.setWheelShape(WheelShape.ROUND);
+        bikes.add(b1);
+        bikes.add(b2);
+        List<WheelShape> list = bikes.stream().map(Bike::getWheelShape).collect(Collectors.toList());
+        System.out.println(list);
+
+        String joined = bikes.stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(", "));
+        System.out.println(joined);
+
+        Map<WheelShape, List<Bike>> byWheelShape
+                = bikes.stream()
+                .collect(Collectors.groupingBy(Bike::getWheelShape));
+        System.out.println(byWheelShape);
     }
 }

@@ -21,6 +21,11 @@ public class Bike implements Vehicle,Ship {
         return wheelShape;
     }
 
+    public void setWheelShape(WheelShape wheelShape) {
+        this.wheelShape=wheelShape;
+    }
+
+
     @Override
     public void getSeatType() {
         new UnsupportedOperationException("Not Implemented yet!");
