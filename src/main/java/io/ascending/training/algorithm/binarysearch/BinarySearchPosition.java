@@ -1,11 +1,11 @@
-package io.ascending.training.algorithm;
+package io.ascending.training.algorithm.binarysearch;
 
 import java.util.Arrays;
 
 /*
  * leetcode 34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
  */
-public class BinarySearch {
+public class BinarySearchPosition {
     public int searchExtrem(int[] sortedArr,int leftMost,int searchValue,boolean leftSearch){
         int loIndex = leftMost;
         //solve length=1
@@ -99,7 +99,7 @@ public class BinarySearch {
 
     public static void main(String[] args){
         System.out.println("start searching...");
-        BinarySearch bs = new BinarySearch();
+        BinarySearchPosition bs = new BinarySearchPosition();
         int[] nums = {5,7,8,8,9,10};
         int[] result = bs.searchPosition(nums,6);
         System.out.println(Arrays.toString(result));
