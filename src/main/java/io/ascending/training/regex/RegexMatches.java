@@ -7,21 +7,21 @@ public class RegexMatches {
     //https://www.freeformatter.com/java-regex-tester.html
     //https://www.geeksforgeeks.org/regular-expressions-in-java/
     //https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+    //match , find groups
     public static void main( String args[] ) {
 //        System.out.println (Pattern.matches(".",
 //                "3000"));
-
 //        "/dep/123"
         RegexMatches rm = new RegexMatches();
         rm.simpleDemo("This order was placed for QT3000! OK?");
         rm.splitAPIUrl("/dep$test");
-////        rm.splitAPIUrl("dep/123");
-//
-////        rm.splitUrl("/dep/123");
-////        System.out.println (Pattern.matches(".",
-////                "3000"));
+//      rm.splitAPIUrl("dep/123");
+////
+//////   rm.splitUrl("/dep/123");
+//////   System.out.println (Pattern.matches(".",
+//////                "3000"));
         String log="burger.letters.com - - [01Jul1996:00:00:12 -0400] 'GET /images/NASA-logosmall.gif' HTTP/1.0";
-////        String log="burger.letters.com - - [01Jul1996:00:00:12 -0400] 'GET /images/NASA-logosmall.GIF' HTTP/1.0";
+//////  String log="burger.letters.com - - [01Jul1996:00:00:12 -0400] 'GET /images/NASA-logosmall.GIF' HTTP/1.0";
         rm.splitLog(log);
     }
     public boolean splitLog(String line){
@@ -52,18 +52,21 @@ public class RegexMatches {
         }
         return m.find();
     }
+
+    //This order was placed for QT3000! OK?"
     public boolean simpleDemo(String line){
         String pattern = "(.*)(\\d+)(.*)";
-
         // Create a Pattern object
         Pattern r = Pattern.compile(pattern);
-
         // Now create matcher object.
         Matcher m = r.matcher(line);
         if (m.find()) {
             System.out.println("Found value: " + m.group(0) );
+            //This order was placed for QT
             System.out.println("Found value: " + m.group(1) );
+            //3000
             System.out.println("Found value: " + m.group(2) );
+            //! OK?
             System.out.println("Found value: " + m.group(3) );
         }else {
             System.out.println("NO MATCH");
