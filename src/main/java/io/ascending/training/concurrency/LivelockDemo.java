@@ -14,23 +14,25 @@ public class LivelockDemo {
         thread2.start();
     }
 }
-class Account{
+class Account {
     int acctNum;
     int balance;
     ReentrantLock lock = new ReentrantLock();
-    Account(int acctNum, int balance){
+
+    Account(int acctNum, int balance) {
         this.acctNum = acctNum;
         this.balance = balance;
     }
 
     /**
      * Method for depositing amount
+     *
      * @param amount
      * @return
      */
-    public boolean deposit(int amount){
+    public boolean deposit(int amount) {
         System.out.println("In deposit method");
-        if(this.lock.tryLock()){
+        if (this.lock.tryLock()) {
             try {
                 // Simulating some delay
                 Thread.sleep(500);
@@ -48,12 +50,13 @@ class Account{
 
     /**
      * Method for withdrawing amount
+     *
      * @param amount
      * @return
      */
-    public boolean withdraw(int amount){
+    public boolean withdraw(int amount) {
         System.out.println("In withdraw method");
-        if(this.lock.tryLock()){
+        if (this.lock.tryLock()) {
             try {
                 // Simulating some delay
                 Thread.sleep(500);
@@ -68,12 +71,20 @@ class Account{
         }
         return false;
     }
-
+// thread 1 account1.transact(account2){
+//        account1.withdraw(100)  account1.lock
+    //  account2.deposit(100)      account2.lock
+//}
+    //thread 2 account2.trasact(account1){
+        //account2.withdraw(100) account2.lock
+        //account1.deposit(100) account1.lock
+    //}
     public boolean transact(Account targetAcct, int amount){
         //System.out.println("In transact method " + targetAcct);
         boolean flag = false;
         // If you can withdraw from the source account and
         // deposit it into target account then only return true
+        // this=account1 , targetAcct = account2;
         if(this.withdraw(amount) && targetAcct.deposit(amount)){
             flag = true;
         }else{
