@@ -43,8 +43,8 @@ public class Dfs {
         left.left = new TreeNode(3);
         left.right = new TreeNode(2);
         right.right=new TreeNode(2);
-//        dfsTest.preOrder(root);
+        dfsTest.preOrder(root);
 //        dfsTest.inOrder(root);
-        dfsTest.postOrder(root);
+//        dfsTest.postOrder(root);
     }
 }

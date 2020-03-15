@@ -8,13 +8,15 @@ import java.util.List;
 import java.util.Queue;
 
 public class Bfs {
-        public List<Integer> largestValues(TreeNode root) {
+        public List<List<Integer>> largestValues(TreeNode root) {
             Queue<TreeNode> queue = new LinkedList<>();
-            List<Integer> result = new ArrayList<>();
+            //[[1],[2,3],[4,5]]
+            List<List<Integer>> result = new ArrayList<>();
             queue.offer(root);
             while(!(queue.isEmpty())){
-                int temp = 0;
+                int temp=0;
                 int size = queue.size();
+                List<Integer> level=new ArrayList<>();
                 for(int i =0;i < size;i++){
                     TreeNode node = queue.poll();
                     if(node.val>=temp){
@@ -26,8 +28,10 @@ public class Bfs {
                     if(!(node.right == null)){
                         queue.offer(node.right);
                     }
+//                    level.add(temp);
                 }
-                result.add(temp);
+                level.add(temp);
+                result.add(level);
             }
             System.out.println(result);
             return result;

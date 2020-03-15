@@ -9,6 +9,7 @@ public class Fibnacci {
     }
 
     public int recurWithMem(int k,int[] mem){
+        //mem[1]>0 false
         if(mem[k]>0)return mem[k];
         if(k<=0)return 0;
         if(k<=2){
