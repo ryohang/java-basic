@@ -27,6 +27,15 @@ public class LambdaTest {
         MyString classString = new LambdaTest.MyStringImpl();
         System.out.println(classString.myStringFunction("Ryo"));
 
+        MyString classString2 = new MyString() {
+            @Override
+            public String myStringFunction(String str) {
+                return "Good Morning " + str + "!";
+            }
+        };
+        System.out.println(classString2.myStringFunction("Ryo"));
+
+
 
         MyString value = (str) -> "Good Morning " + str + "!";
         MyString value2 = (str) -> "Good Afternoon " + str + "!";;

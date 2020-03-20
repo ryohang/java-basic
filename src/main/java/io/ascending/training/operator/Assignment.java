@@ -1,5 +1,8 @@
 package io.ascending.training.operator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Assignment {
     class Test
     {
@@ -36,10 +39,11 @@ public class Assignment {
         f = f * 2;
 
         // shorthand assignment operator
-        a += 1;
-        b -= 1;
-        e *= 2;
-        f /= 2;
+        a -= 1;
+        b += 1;
+        e /= 2;
+        f *= 2;
+
         System.out.println("a, b, e, f ("
                 + "using shorthand operators)= "
                 + a + ", " + b + ", "
@@ -48,7 +52,7 @@ public class Assignment {
         System.out.println("a, b ("
                 + "pass by value)= "
                 + a + ", " + b);
-
+//
         Integer i = new Integer(10);
         Integer j = new Integer(20);
         swap(i, j);
@@ -58,11 +62,21 @@ public class Assignment {
         int jx = 20;
         swapValue(ix,jx);
         System.out.println(ix);
+        System.out.println(jx);
+
+        List<Integer> integerList = new ArrayList();
+        addValue(integerList);
+        System.out.println(integerList);
 //        Test t = new Test(5);
 //        change(t);
 //        System.out.println(t.x);
     }
 
+    public static void addValue(List<Integer> ls){
+        ls.add(new Integer(5));
+    }
+
+    //a=copy(ix), b=copy(jx)
     public static void swapValue(int a, int b){
         int temp=b;
         b=a;

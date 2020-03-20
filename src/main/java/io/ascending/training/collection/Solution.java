@@ -1,6 +1,7 @@
 package io.ascending.training.collection;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Solution {
@@ -47,15 +48,17 @@ public class Solution {
         //sorting employees array using Comparable interface implementation
         Arrays.sort(empArr);
         System.out.println("Default Sorting of Employees list:\n"+Arrays.toString(empArr));
-//        Comparator<Employee> salaryComparator = (e1, e2)->(int)(e1.getSalary()-e2.getSalary());
-        Arrays.sort(empArr, new SalaryComparator());
+        Arrays.sort(empArr, new AgeComparator());
+
+        Comparator<Employee> salaryComparator = (e1, e2)->(int)(e1.getSalary()-e2.getSalary());
+        Arrays.sort(empArr, salaryComparator);
         System.out.println("Employees list sorted by Salary:\n"+Arrays.toString(empArr));
-
-        //sort employees array using Comparator by Age
-        Arrays.sort(empArr, (o1, o2)->o1.getAge()-o2.getAge());
+//
+//        //sort employees array using Comparator by Age
+        Arrays.sort(empArr,(o1, o2)->o1.getAge()-o2.getAge());
         System.out.println("Employees list sorted by Age:\n"+Arrays.toString(empArr));
-
-        //sort employees array using Comparator by Name
+//
+//        //sort employees array using Comparator by Name
         Arrays.sort(empArr, NameComparator);
         System.out.println("Employees list sorted by Name:\n"+Arrays.toString(empArr));
     }
