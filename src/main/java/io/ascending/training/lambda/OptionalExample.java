@@ -87,9 +87,14 @@ public class OptionalExample {
         twoD.add(l1);
         twoD.add(l2);
 
-        List<List<Integer>> result2 = new ArrayList<>();
+//        List<List<List<Integer>>> result2 = new ArrayList<>();
+//        [[[0,1],[0,1],[0,1]],[[0,1],[0,1],[0,1]]]
+//        [[0,1],[0,1],[0,1],[0,1],[0,1],[0,1]]
+//        [0,1,0,1,0,1,0,1,0,1,0,1]
+//        result2.stream().flatMap(l->l.stream()).flatMap(l5->l5.stream()).filter()
+       List<List<Integer>> result2 = new ArrayList<>();
 
-        List<Integer> result = twoD.stream().flatMap(List::stream)
+        List<Integer> result = twoD.stream().flatMap(l->l.stream())
                 .map(e->e+1).collect(Collectors.toList());
         System.out.println("======== result 1 ==========");
         System.out.println(result);
@@ -101,7 +106,7 @@ public class OptionalExample {
         System.out.println(result2);
 
         System.out.println("======== result 3 ==========");
-        List<List<Integer>> result3 = twoD.stream().map(e->e.stream().map(i->i+1).collect(Collectors.toList())).collect(Collectors.toList());
+        List<List<Integer>> result3 = twoD.stream().map(l->l.stream().map(i->i+1).collect(Collectors.toList())).collect(Collectors.toList());
         System.out.println(result3);
 
         List<? extends Number> foo3 = new ArrayList<Number>();
