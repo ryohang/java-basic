@@ -27,10 +27,10 @@ public class FunctionalProgramming {
 //        });
 
         List<Integer> anotherNums = Arrays.asList(1,2,3);
-        final int factor = 2;
-//        final int[] factor = new int[]{2};
-        Stream<Integer> str = anotherNums.stream().map(e->e*factor);
-//        factor[0] = 0;
+//        final int factor = 2;
+        final int[] factor = new int[]{2};
+        Stream<Integer> str = anotherNums.stream().map(e->e*factor[0]);
+        factor[0] = 0;
 //        factor = new int[]{0};
         str.forEach(System.out::println);
 //

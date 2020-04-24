@@ -31,6 +31,10 @@ public class MutableLocation {
     }
 
     public static void main(String[] args){
+//        String zhang3=new String("hello ");
+//        String zhang3=new String("hello ");
+//        zhang3=new String(zhang3+" ryo");
+//        System.out.println(zhang3);
         List<MutableLocation> arrs = new ArrayList();
         MutableLocation m1 = new MutableLocation(1,1);
         arrs.add(m1);
