@@ -14,6 +14,9 @@ public class RegexMatches {
 //        System.out.println (Pattern.matches(".",
 //                "3000"));
 //        "/dep/123"
+//        Pattern p = Pattern.compile("(^\\t\\{)(.*)(\\t\\}$)");
+//        Matcher m = p.matcher("aaaaab");
+//        boolean b = m.matches();
         RegexMatches rm = new RegexMatches();
         rm.simpleDemo("This order was placed for QT3000! OK?");
         rm.splitAPIUrl("/dep$test");
