@@ -1,7 +1,9 @@
 package io.ascending.training.domain;
 
 import io.ascending.training.WheelShape;
-
+//Bike b =new Bike()
+//b.wheelNum+1
+//b.getWheelNum()
 public class Bike implements Vehicle,Ship {
     private WheelShape wheelShape = WheelShape.ROUND;
     protected Integer wheelNum = 2;
