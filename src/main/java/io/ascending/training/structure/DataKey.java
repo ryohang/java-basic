@@ -1,5 +1,7 @@
 package io.ascending.training.structure;
 
+import java.util.Objects;
+
 public class DataKey {
 
     private String name;
@@ -32,9 +34,11 @@ public class DataKey {
         int result = 1;
         result = prime * result + id;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
+//        Objects.hash(id,name);
         return result;
     }
 
+    // dataKey1.equals(dataKey2)
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
