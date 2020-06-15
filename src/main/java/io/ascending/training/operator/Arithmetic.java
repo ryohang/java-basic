@@ -5,6 +5,7 @@ public class Arithmetic {
     {
         int a = 20, b = 10, c = 0, d = 20, e = 40, f = 30;
         String x = "Thank", y = "You";
+        double g=10.0, h=3.0;
 
         // + and - operator
         System.out.println("a + b = " + (a + b));
@@ -28,5 +29,7 @@ public class Arithmetic {
         // an exception
 //         System.out.println(a/c);
         System.out.println(f/e);
+
+        System.out.println(g/h);
     }
 }

@@ -31,5 +31,9 @@ public class Bitwise {
         // a=a&b
         a &= b;
         System.out.println("a= " + a);
+
+
+        //1010 >> 101
+        // 10/2 10>>1
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Assignment {
-    class Test
+    static class Test
     {
         int x;
         Test(int i) { x = i; }
@@ -52,7 +52,7 @@ public class Assignment {
         System.out.println("a, b ("
                 + "pass by value)= "
                 + a + ", " + b);
-//
+////
         Integer i = new Integer(10);
         Integer j = new Integer(20);
         swap(i, j);
@@ -94,6 +94,7 @@ public class Assignment {
     public static void change(Test t)
     {
         t.x = 10;
+//        t= new Test(10)
     }
 
 }
