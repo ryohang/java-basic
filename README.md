@@ -17,3 +17,7 @@ go to home directory
 	
 #### compile class with maven
     mvn compile
+
+
+#### how to run python, at corresponding directory and type following
+    python filename
