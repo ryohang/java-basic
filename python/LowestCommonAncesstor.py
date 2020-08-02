@@ -14,17 +14,21 @@ n3.right = TreeNode(6)
 n2.right = TreeNode(9)
 
 
-def lowestCommonAncesstor(root, p, q):
-    if root==None or root==p or root==q:
+def lowestCommonAncestor(root, p, q):
+    if root == p or root == q:
         return root
-    l = lowestCommonAncesstor(root.left, p, q)
-    r = lowestCommonAncesstor(root.right, p, q)
     
-    if l==None:
-        return r
-    if r==None:
-        return l
-    return root
+    left = right = None
+    if root.left:
+        left = lowestCommonAncestor(root.left, p, q)
+    if root.right:
+        right = lowestCommonAncestor(root.right, p, q)
+
+    if left and right:
+        return root
+    else:
+        return left or right
+
     
         
-print(lowestCommonAncesstor(n1, 2, 3))
+print(lowestCommonAncestor(n1, n2, n3).val)
