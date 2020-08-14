@@ -1,27 +1,40 @@
-class TreeNode(object):
+class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-def treePrint(root):
-    if root!=None:
-        print(root.val)
-        treePrint(root.left)
-        treePrint(root.right)
+def findMaxIndex(nums):
+    re = -1
+    maxVal = float('-inf')
+    for index, i  in enumerate(nums):
+        if i > maxVal:
+            maxVal = i
+            re = index
+    return re
 
 def constructMaximumBinaryTree(nums):
-    stack = []
-    for i in range(len(nums)):
-        cur = TreeNode(nums[i])
-        while len(stack)>0 and stack[-1].val < nums[i]:
-            cur.left = stack.pop()
-        if(len(stack)>0):
-            stack[-1].right = cur
-        stack.append(cur)
-    return None if len(stack) == 0 else stack[0]
+    if nums == []:
+        return None
+    if len(nums) == 1:
+        return TreeNode(nums[0])
+    
+    maxIndex = findMaxIndex(nums)
+    root = TreeNode(nums[maxIndex])
+    leftTree = constructMaximumBinaryTree(nums[:maxIndex])
+    rightTree = constructMaximumBinaryTree(nums[maxIndex+1:])
+    
+    root.left = leftTree
+    root.right = rightTree
+    return root
     
     
-nums = [3,2,1,6,0,5]
-tree = constructMaximumBinaryTree(nums)
-treePrint(tree)
+def dfs(root):
+    print(root.val)
+    if root.left:
+        dfs(root.left)
+    if root.right:
+        dfs(root.right)
+
+dfs(constructMaximumBinaryTree([3,2,1,6,0,5]))
+#https://leetcode.com/problems/maximum-binary-tree/
