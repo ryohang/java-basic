@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+pyspark = ">=2.4.0"
 
 [requires]
 python_version = "3.7"
